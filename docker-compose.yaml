@@ -40,6 +40,7 @@ services:
       - mynetwork
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
 
 volumes:
   redis-data:
