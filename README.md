@@ -9,7 +9,7 @@ clone auth, webapp...
 
 To bring up the environment, run:
 
-docker-compose up --build -d
+docker-compose up -d
 
 YOu will then be able to access: 
 
