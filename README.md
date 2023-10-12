@@ -1,7 +1,7 @@
 # docker-compose
 To develop on local host create a directory called TimeTamer
 
-under that copy the docker-compose.yaml
+under that copy docker-compose.yaml and init_db.sql
 
 while in TimeTamer directory:
 
@@ -9,7 +9,7 @@ clone auth, webapp...
 
 To bring up the environment, run:
 
-docker-compose up --build
+docker-compose up --build -d
 
 YOu will then be able to access: 
 
