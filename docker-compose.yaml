@@ -9,6 +9,9 @@ services:
       - "5001:80"
     networks:
       - mynetwork
+    depends_on:
+    - db
+    - redis
 
   frontend:
     build:
@@ -27,9 +30,20 @@ services:
       - mynetwork
     volumes:
       - redis-data:/data
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=auth_user
+      - POSTGRES_PASSWORD=auth_pass
+      - POSTGRES_DB=auth_db
+    networks:
+      - mynetwork
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
 volumes:
   redis-data:
+  postgres_data:
 
 networks:
   mynetwork:
